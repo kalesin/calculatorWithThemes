@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div
+    class="flex flex-col w-screen h-screen bg-skin-main justify-center items-center"
+  >
+    <ThemeSwitcher @setTheme="setTheme"/>
+    <Numpad/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ThemeSwitcher from "./components/ThemeSwitcher.vue";
+import Numpad from "./components/Numpad.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Numpad,
+    ThemeSwitcher,
+  },
+  data() {
+    return {
+      theme: 0,
+    };
+  },
+  methods: {
+    setTheme(index) {
+      this.theme = index;
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>

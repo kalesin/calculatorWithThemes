@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Spartan";
+    src: url('/fonts/static/Spartan-Bold.ttf') format("truetype");
+}
+
+@layer base {
+    :root {
+        --main: "#3a4764";
+        --keypad: "#232c43";
+        --screen: "#182034";
+        --key-blue: "#637097";
+        --key-shadow-blue: "#404e72";
+        --key-red: "#d03f2f";
+        --key-shadow-red: "#93261a";
+        --key: "#eae3dc";
+        --key-shadow: "#b4a597";
+        --text-dark: "#444b5a";
+        --text-white: "#ffffff";
+    }
+
+    .themeLight {
+        --main: "#e6e6e6";
+        --keypad: "#d1cccc";
+        --screen: "#ededed";
+        --key-blue: "#377f86";
+        --key-shadow-blue: "#1b5f65";
+        --key-red: "#ca5502";
+        --key-shadow-red: "#893901";
+        --key: "#e5e4e1";
+        --key-shadow: "#a69d91";
+        --text-dark: "#35352c";
+        --text-white: "#ffffff";
+    }
+
+    .themeRetro {
+        --main: "#160628";
+        --keypad: "#1d0934";
+        --screen: "#1d0934";
+        --key-blue: "#58077d";
+        --key-shadow-blue: "#bc15f4";
+        --key-red: "#00e0d1";
+        --key-shadow-red: "#6cf9f2";
+        --key: "#341c4f";
+        --key-shadow: "#871c9c";
+        --text-light: "#ffe53d";
+        --text-dark: "#1b2428";
+        --text-white: "#ffffff";
+    }
+}
+
+    .spartan {
+        font-family: "Spartan", sans-serif;
+    }
+
+    .key {
+        @apply w-1/5 h-1/6 flex justify-center items-center rounded-md border-b-4 pt-2 font-bold text-3xl;
+    }
+
+    .keyColor1 {
+        @apply border-skin-key-shadow bg-skin-key text-text_dark;
+    }
+
+    .keyColor2 {
+        @apply border-skin-key-shadow-blue bg-skin-key-blue text-white text-xl;
+    }
+
+    .keyColor3 {
+        @apply border-skin-key-shadow-red bg-skin-key-red text-white;
+    }
+
+    .toggle {
+        @apply bg-skin-key-red;
+    }
