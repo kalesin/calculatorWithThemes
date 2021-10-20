@@ -4,19 +4,30 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        skin: {
-          main: "var(--main)",
-          keypad: "var(--keypad)",
-          screen: "var(--screen)",
-          'key-blue': "var(--key-blue)",
-          'key-shadow-blue': "var(--key-shadow-blue)",
-          'key-red': "var(--key-red)",
-          'key-shadow-red': "var(--key-shadow-red)",
-          key: "var(--key)",
-          'key-shadow': "var(--key-shadow)",
-          'text-dark': "var(--text-dark)",
-          'text-white': "var(--text-white)",
-        }
+        main: "var(--main)",
+        keypad: "var(--keypad)",
+        screen: "var(--screen)",
+        'key-blue': "var(--key-blue)",
+        'key-shadow-blue': "var(--key-shadow-blue)",
+        'key-red': "var(--key-red)",
+        'key-shadow-red': "var(--key-shadow-red)",
+        key: "var(--key)",
+        'key-shadow': "var(--key-shadow)",
+        'text-keys': "var(--text-keys)",
+        'text-display': "var(--text-display)"
+      },
+      colors: {
+        main: "var(--main)",
+        keypad: "var(--keypad)",
+        screen: "var(--screen)",
+        'key-blue': "var(--key-blue)",
+        'key-shadow-blue': "var(--key-shadow-blue)",
+        'key-red': "var(--key-red)",
+        'key-shadow-red': "var(--key-shadow-red)",
+        key: "var(--key)",
+        'key-shadow': "var(--key-shadow)",
+        'text-keys': "var(--text-keys)",
+        'text-display': "var(--text-display)"
       }
     },
   },

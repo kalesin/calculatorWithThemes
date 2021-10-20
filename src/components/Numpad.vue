@@ -6,27 +6,27 @@
       p-4
       h-1/6
       w-1/4
-      bg-skin-screen
+      bg-screen
       rounded-xl
       flex flex-col
       justify-start
       items-end
-      text-white
+      text-text-display
       font-bold
       text-4xl
       spartan
     "
   >
-    <div>{{ input.join("") }}</div>
+    <div>{{ inputDisplay }}</div>
     <div class="ml-2 mr-2">{{ operation }}</div>
-    <div>{{ input2.join("") }}</div>
+    <div>{{ inputDisplay2 }}</div>
   </div>
 
   <div class="h-1/2 w-1/4 bg-keypad rounded-xl p-6">
     <div class="h-full w-full flex flex-wrap gap-4 justify-between">
       <button
         @click="button(key)"
-        class="key flex-grow spartan"
+        class="key spartan"
         v-for="(key, index) in keys"
         :key="index"
         :class="{
@@ -42,8 +42,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
   data() {
     return {
@@ -79,6 +77,26 @@ export default {
     inputNum2() {
       console.log(this.input2.join(""));
       return this.input2.length != 0 ? parseFloat(this.input2.join("")) : "";
+    },
+    inputDisplay() {
+      let arr = JSON.parse(JSON.stringify(this.input.reverse()));
+      console.log(arr);
+      for (let i = 0; i < arr.length; i++) {
+        if ((i+1) % 4 == 0) {
+          arr.splice(i, 0, ",");
+        }
+      }
+      return arr.reverse().join("");
+    },
+    inputDisplay2() {
+      let arr = JSON.parse(JSON.stringify(this.input2.reverse()));
+      console.log(arr);
+      for (let i = 0; i < arr.length; i++) {
+        if ((i+1) % 4 == 0) {
+          arr.splice(i, 0, ",");
+        }
+      }
+      return arr.reverse().join("");
     },
   },
   methods: {
@@ -138,7 +156,7 @@ export default {
         }
       } else {
         if (key.match(/[0-9]/g) && this.input2.length < 15) {
-            if (this.input2.length == 1 && this.input2[0] == "0") {
+          if (this.input2.length == 1 && this.input2[0] == "0") {
             this.input2.pop();
           }
           this.input2.push(key);

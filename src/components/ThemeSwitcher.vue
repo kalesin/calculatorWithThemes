@@ -1,14 +1,16 @@
 <template>
   <div class="h-10 w-1/4 flex justify-between mb-4">
-    <div class="text-text_white flex-grow h-full font-bold text-3xl spartan">calc</div>
-    <div class="text-text_white font-bold text-md spartan mt-6 mr-4">THEME</div>
+    <div class="text-text-display flex-grow h-full font-bold text-3xl spartan">
+      calc
+    </div>
+    <div class="text-text-display font-bold text-md spartan mt-6 mr-4">THEME</div>
     <div class="h-full w-1/6 justify-center flex-col items-center">
       <div
         class="
           h-1/2
           justify-between
           flex
-          text-text_white
+          text-text-display
           ml-2
           mr-2
           mb-1
@@ -23,7 +25,7 @@
 
       <div
         class="
-          bg-skin-keypad
+          bg-keypad
           h-3/5
           w-full
           rounded-xl
@@ -60,7 +62,7 @@ export default {
   methods: {
     setActive(index) {
       this.isActive = index;
-      this.$emit('setTheme', index);
+      this.$emit("setTheme", index);
     },
   },
 };

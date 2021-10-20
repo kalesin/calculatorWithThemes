@@ -1,6 +1,7 @@
 <template>
   <div
-    class="flex flex-col w-screen h-screen bg-skin-main justify-center items-center"
+    class="flex flex-col w-screen h-screen bg-main justify-center items-center"
+    :class="{themeLight: theme==1, themeRetro: theme==2}"
   >
     <ThemeSwitcher @setTheme="setTheme"/>
     <Numpad/>
